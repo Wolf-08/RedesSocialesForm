@@ -1,0 +1,216 @@
+<div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3>Cuestionario Sobre Redes Sociales</h3>
+          <p>Responder honestamente</p>
+          <form autocomplete="off"
+          [formGroup]="form"
+          (ngSubmit)="guardar()">
+            <div class="col-md-12">
+              <label class="col-2 col-form-label">Correo</label>
+              <input
+                class="form-control"
+                type="email"
+                placeholder="E-mail"
+                formControlName="email">
+            </div>
+            <div class="col-md-12">
+              <label class="col-2 col-form-label">Edad</label>
+              <select class="form-select mt-3" required
+              formControlName="edad">
+                <option selected disabled value="">Edad</option>
+                <option value="1">18-25</option>
+                <option value="2">26-33</option>
+                <option value="3">34-40</option>
+                <option value="4">40+</option>
+              </select>
+            </div>
+            <label class="col-8 col-form-label">Tiempo Promedio en Facebook</label>
+            <div class="col-md-12">
+              <input
+                class="form-range"
+                type="range"
+                name="TiempoFacebook"
+                min="0"
+                max="24"
+                step="0.5"
+                value="2"
+                required
+                oninput= "this.nextElementSibling.value = this.value"
+                formControlName="TiempoFacebook">
+              <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
+            </div>
+            <label class="col-8 col-form-label">Tiempo Promedio en Tiktok</label>
+            <div class="col-md-12">
+              <input
+                class="form-range"
+                type="range"
+                name="TiempoTikTok"
+                min="0"
+                max="24"
+                step="0.5"
+                value="2"
+                required
+                oninput= "this.nextElementSibling.value = this.value"
+                formControlName="TiempoTikTok">
+              <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
+            </div>
+            <label class="col-8 col-form-label">Tiempo Promedio en Instagram</label>
+            <div class="col-md-12">
+              <input
+                class="form-range"
+                type="range"
+                name="TiempoInstagram"
+                min="0"
+                max="24"
+                step="0.5"
+                value="2"
+                required
+                oninput= "this.nextElementSibling.value = this.value"
+                formControlName="TiempoInstagram">
+              <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
+            </div>
+            <label class="col-8 col-form-label">Tiempo Promedio en Twitter</label>
+            <div class="col-md-12">
+              <input
+                class="form-range"
+                type="range"
+                name="TiempoTwitter"
+                min="0"
+                max="24"
+                step="0.5"
+                value="2"
+                required
+                oninput= "this.nextElementSibling.value = this.value"
+                formControlName="TiempoTwitter">
+              <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
+            </div>
+            <label class="col-8 col-form-label">Tiempo Promedio en Whatsapp</label>
+            <div class="col-md-12">
+              <input
+                class="form-range"
+                type="range"
+                name="TiempoWhatsapp"
+                min="0"
+                max="24"
+                step="0.5"
+                value="2"
+                required
+                oninput= "this.nextElementSibling.value = this.value"
+                formControlName="TiempoWhatsapp">
+              <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
+            </div>
+            <div class="col-md-12 mt-3">
+              <label class="mb-3 mr-1" for="gender">Sexo: </label>
+              <input
+                formControlName="sexo"
+                type="radio"
+                class="btn-check"
+                name="sexo"
+                id="male"
+                autocomplete="off"
+                required
+                value="M"
+              />
+              <label class="btn btn-sm btn-outline-secondary" for="male" >Hombre</label>
+              <input
+              formControlName="sexo"
+                type="radio"
+                class="btn-check"
+                name="sexo"
+                id="female"
+                autocomplete="off"
+                value="F"
+                required
+              />
+              <label class="btn btn-sm btn-outline-secondary" for="female">Mujer</label
+              >
+            </div>
+            <div class="col-md-12 mt-3">
+              <label class="mb-3 mr-1" for="redFavorita">Red Social Favorita: </label>
+              <input
+                formControlName="redFavorita"
+                type="radio"
+                class="btn-check"
+                name="redFavorita"
+                autocomplete="off"
+                required
+                id="Facebook"
+                value="Fa"
+              />
+              <label class="btn btn-sm btn-outline-secondary" for="Facebook">Facebook</label>
+              <input
+              formControlName="redFavorita"
+                type="radio"
+                class="btn-check"
+                name="redFavorita"
+                id="Twitter"
+                autocomplete="off"
+                value="Tw"
+                required
+              />
+              <label class="btn btn-sm btn-outline-secondary" for="Twitter">Twitter</label
+              >
+              <input
+              formControlName="redFavorita"
+                type="radio"
+                class="btn-check"
+                name="redFavorita"
+                id="Whatsapp"
+                autocomplete="off"
+                value="Wa"
+                required
+              />
+              <label class="btn btn-sm btn-outline-secondary" for="Whatsapp">Whatsapp</label
+              >
+              <input
+                type="radio"
+                formControlName="redFavorita"
+                class="btn-check"
+                name="redFavorita"
+                id="Instagram"
+                autocomplete="off"
+                value="In"
+                required
+              />
+              <label class="btn btn-sm btn-outline-secondary" for="Instagram">Instagram</label
+              >
+              <input
+              type="radio"
+              class="btn-check"
+              name="redFavorita"
+              formControlName="redFavorita"
+              id="TikTok"
+              autocomplete="off"
+              value="Tk"
+              required
+            />
+            <label class="btn btn-sm btn-outline-secondary" for="TikTok">TikTok</label
+            >
+              <div class="valid-feedback mv-up">You selected a gender!</div>
+              <div class="invalid-feedback mv-up">Please select a gender!</div>
+            </div>
+            <!--
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="invalidCheck"
+                required
+              />
+              <label class="form-check-label"
+                >I confirm that all data are correct</label
+              >
+            </div> -->
+            <div class="form-button mt-3">
+              <button id="submit" type="submit" class="btn btn-primary">
+                Guardar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

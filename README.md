@@ -15,18 +15,4 @@ Run `ng generate component component-name` to generate a new component. You can 
 For use this app correctly you need to star the api https://github.com/Wolf-08/ApiRedesSociales an then run the app  with `ng serve`
 
 ## Test
-![encuesta1](\src\assets\encuesta1.png)
-
-Vista del Form 
-
-![](C:\Users\aleja\Desktop\emqu\frontend\src\assets\encuesta2.png)
-
-Form llenado 
-
-![](C:\Users\aleja\Desktop\emqu\frontend\src\assets\stats1.png)
-
-Pagina de estadisticas 
-
-![](C:\Users\aleja\Desktop\emqu\frontend\src\assets\stats2.png)
-
-Grafica de estadisticas
+https://drive.google.com/file/d/1DeFDxN3WcuUI8Mm-yLfqDxYGreO69CYP/view?usp=sharing 

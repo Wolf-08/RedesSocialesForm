@@ -20,9 +20,12 @@ export class FormComponent implements OnInit {
 	}
 	ngOnInit(): void {
 	}
+	campoValido(campo:string) {
+    return this.form.get(campo)?.invalid && this.form.get(campo)?.touched
+  }
 	crearFormulario() {
 		this.form = this.fb.group({
-			email: ['',Validators.required],
+			email: ['',[Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
 			edad: ['',Validators.required],
 			sexo: ['',Validators.required],
 			redFavorita:['',Validators.required],
@@ -36,9 +39,20 @@ export class FormComponent implements OnInit {
 
 	guardar(){
 		console.log(this.form.value)
+		if ( this.form.invalid ) {
+      return Object.values( this.form.controls ).forEach( control => {
+        if ( control instanceof FormGroup ) {
+          Object.values( control.controls ).forEach( control => control.markAsTouched() );
+        } else {
+          control.markAsTouched();
+        }
+
+      });
+		}
+		this.form.value['id'] =  Math.round(Math.random()*(100-1)+1)
 		this.data = JSON.stringify(this.form.value);
-		if(this.form.value['edad'] === '1') console.log('aqui')
 		console.log(this.data);
-		this.apiService.postTypeRequest('form',this.form.value);
+		this.apiService.postTypeRequest('form',this.data);
+		this.form.reset()
 	}
 }

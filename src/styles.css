@@ -125,3 +125,16 @@ html, body {
     background-color: #ebeff8;
     color: #8D8D8D;
 }
+
+.stretch-card {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    -webkit-justify-content: stretch;
+    justify-content: stretch;
+  }
+.stretch-card > .card {
+    width: 100%;
+    min-width: 100%;
+  }

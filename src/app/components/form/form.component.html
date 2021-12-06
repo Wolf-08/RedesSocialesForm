@@ -13,18 +13,22 @@
                 class="form-control"
                 type="email"
                 placeholder="E-mail"
-                formControlName="email">
+                formControlName="email"
+                [class.is-invalid]="campoValido('email')">
+                <small *ngIf=" campoValido('email')" style="color: aliceblue;"> Ingrese correo Valido </small>
             </div>
             <div class="col-md-12">
               <label class="col-2 col-form-label">Edad</label>
               <select class="form-select mt-3" required
-              formControlName="edad">
+              formControlName="edad"
+              [class.is-invalid]="campoValido('edad')">
                 <option selected disabled value="">Edad</option>
                 <option value="1">18-25</option>
                 <option value="2">26-33</option>
                 <option value="3">34-40</option>
                 <option value="4">40+</option>
               </select>
+              <small *ngIf=" campoValido('edad')" style="color: aliceblue;"> Seleccione Rango de Edad </small>
             </div>
             <label class="col-8 col-form-label">Tiempo Promedio en Facebook</label>
             <div class="col-md-12">
@@ -37,9 +41,10 @@
                 step="0.5"
                 value="2"
                 required
-                oninput= "this.nextElementSibling.value = this.value"
+                [class.is-invalid]="campoValido('TiempoFacebook')"
                 formControlName="TiempoFacebook">
               <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
+              <small *ngIf=" campoValido('TiempoFacebook')" style="color: aliceblue;"> Seleccione un Rango</small>
             </div>
             <label class="col-8 col-form-label">Tiempo Promedio en Tiktok</label>
             <div class="col-md-12">
@@ -52,9 +57,10 @@
                 step="0.5"
                 value="2"
                 required
-                oninput= "this.nextElementSibling.value = this.value"
-                formControlName="TiempoTikTok">
+                formControlName="TiempoTikTok"
+                [class.is-invalid]="campoValido('TiempoTikTok')">
               <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
+              <small *ngIf=" campoValido('TiempoTikTok')" style="color: aliceblue;"> Seleccione un Rango</small>
             </div>
             <label class="col-8 col-form-label">Tiempo Promedio en Instagram</label>
             <div class="col-md-12">
@@ -67,9 +73,10 @@
                 step="0.5"
                 value="2"
                 required
-                oninput= "this.nextElementSibling.value = this.value"
-                formControlName="TiempoInstagram">
+                formControlName="TiempoInstagram"
+                [class.is-invalid]="campoValido('TiempoInstagram')">
               <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
+              <small *ngIf=" campoValido('TiempoInstagram')" style="color: aliceblue;"> Seleccione un Rango</small>
             </div>
             <label class="col-8 col-form-label">Tiempo Promedio en Twitter</label>
             <div class="col-md-12">
@@ -82,9 +89,10 @@
                 step="0.5"
                 value="2"
                 required
-                oninput= "this.nextElementSibling.value = this.value"
-                formControlName="TiempoTwitter">
+                formControlName="TiempoTwitter"
+                [class.is-invalid]="campoValido('TiempoTwitter')">
               <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
+              <small *ngIf=" campoValido('TiempoTwitter')" style="color: aliceblue;"> Seleccione un Rango</small>
             </div>
             <label class="col-8 col-form-label">Tiempo Promedio en Whatsapp</label>
             <div class="col-md-12">
@@ -97,9 +105,10 @@
                 step="0.5"
                 value="2"
                 required
-                oninput= "this.nextElementSibling.value = this.value"
-                formControlName="TiempoWhatsapp">
+                formControlName="TiempoWhatsapp"
+                [class.is-invalid]="campoValido('TiempoWhatsapp')">
               <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
+              <small *ngIf=" campoValido('TiempoWhatsapp')" style="color: aliceblue;"> Seleccione un Rango</small>
             </div>
             <div class="col-md-12 mt-3">
               <label class="mb-3 mr-1" for="gender">Sexo: </label>
@@ -112,7 +121,8 @@
                 autocomplete="off"
                 required
                 value="M"
-              />
+                [class.is-invalid]="campoValido('sexo')"/>
+              <small *ngIf=" campoValido('sexo')" style="color: aliceblue;"> Seleccione una opcion</small>
               <label class="btn btn-sm btn-outline-secondary" for="male" >Hombre</label>
               <input
               formControlName="sexo"
@@ -123,7 +133,8 @@
                 autocomplete="off"
                 value="F"
                 required
-              />
+                [class.is-invalid]="campoValido('sexo')"/>
+              <small *ngIf=" campoValido('sexo')" style="color: aliceblue;"> Seleccione una opcion</small>
               <label class="btn btn-sm btn-outline-secondary" for="female">Mujer</label
               >
             </div>
@@ -138,8 +149,9 @@
                 required
                 id="Facebook"
                 value="Fa"
-              />
+                [class.is-invalid]="campoValido('redFavorita')"/>
               <label class="btn btn-sm btn-outline-secondary" for="Facebook">Facebook</label>
+              <small *ngIf=" campoValido('redFavorita')" style="color: aliceblue;"> Seleccione una opcion</small>
               <input
               formControlName="redFavorita"
                 type="radio"
@@ -149,9 +161,9 @@
                 autocomplete="off"
                 value="Tw"
                 required
-              />
-              <label class="btn btn-sm btn-outline-secondary" for="Twitter">Twitter</label
-              >
+                [class.is-invalid]="campoValido('redFavorita')"/>
+              <label class="btn btn-sm btn-outline-secondary" for="Twitter">Twitter</label>
+              <small *ngIf=" campoValido('redFavorita')" style="color: aliceblue;"> Seleccione una opcion</small>
               <input
               formControlName="redFavorita"
                 type="radio"
@@ -161,9 +173,9 @@
                 autocomplete="off"
                 value="Wa"
                 required
-              />
-              <label class="btn btn-sm btn-outline-secondary" for="Whatsapp">Whatsapp</label
-              >
+                [class.is-invalid]="campoValido('redFavorita')"/>
+              <label class="btn btn-sm btn-outline-secondary" for="Whatsapp">Whatsapp</label>
+              <small *ngIf=" campoValido('redFavorita')" style="color: aliceblue;"> Seleccione una opcion</small>
               <input
                 type="radio"
                 formControlName="redFavorita"
@@ -173,9 +185,9 @@
                 autocomplete="off"
                 value="In"
                 required
-              />
-              <label class="btn btn-sm btn-outline-secondary" for="Instagram">Instagram</label
-              >
+                [class.is-invalid]="campoValido('redFavorita')"/>
+              <label class="btn btn-sm btn-outline-secondary" for="Instagram">Instagram</label>
+              <small *ngIf=" campoValido('redFavorita')" style="color: aliceblue;"> Seleccione una opcion</small>
               <input
               type="radio"
               class="btn-check"
@@ -185,25 +197,10 @@
               autocomplete="off"
               value="Tk"
               required
-            />
-            <label class="btn btn-sm btn-outline-secondary" for="TikTok">TikTok</label
-            >
-              <div class="valid-feedback mv-up">You selected a gender!</div>
-              <div class="invalid-feedback mv-up">Please select a gender!</div>
+              [class.is-invalid]="campoValido('redFavorita')"/>
+            <label class="btn btn-sm btn-outline-secondary" for="TikTok">TikTok</label>
+            <small *ngIf=" campoValido('redFavorita')" style="color: aliceblue;"> Seleccione una opcion</small>
             </div>
-            <!--
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="invalidCheck"
-                required
-              />
-              <label class="form-check-label"
-                >I confirm that all data are correct</label
-              >
-            </div> -->
             <div class="form-button mt-3">
               <button id="submit" type="submit" class="btn btn-primary">
                 Guardar

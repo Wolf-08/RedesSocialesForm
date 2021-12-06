@@ -1,1 +1,155 @@
-<p>stats works!</p>
+<div class="row">
+  <div class="col-md-4 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+          <div>
+            <p class="mb-2 text-md-center text-lg-left">Total Encuestas</p>
+            <h1 class="mb-0">{{encuestasRespondidas}}</h1>
+          </div>
+          <i class="fas fa-database fa-3x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+          <div>
+            <p class="mb-2 text-md-center text-lg-left">Red Social Mas Usada Por Rango (18-25)</p>
+            <h1 class="mb-0">{{tiempoPorEdad1.slice(6)}}</h1>
+          </div>
+          <i *ngIf="tiempoPorEdad1.slice(6) === 'Facebook'"class="fab fa-facebook fa-3x"></i>
+          <i *ngIf="tiempoPorEdad1.slice(6) === 'Twitter'"class="fab fa-twitter fa-3x"></i>
+          <i *ngIf="tiempoPorEdad1.slice(6) === 'Whatsapp'"class="fab fa-whatsapp fa-3x"></i>
+          <i *ngIf="tiempoPorEdad1.slice(6) === 'Instagram'"class="fab fa-instagram fa-3x"></i>
+          <i *ngIf="tiempoPorEdad1.slice(6) === 'Tiktok'"class="fab fa-tiktok fa-3x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+          <div>
+            <p class="mb-2 text-md-center text-lg-left">Red Social Mas Usada Por Rango (26-33)</p>
+            <h1 class="mb-0">{{tiempoPorEdad2.slice(6)}}</h1>
+          </div>
+          <i *ngIf="tiempoPorEdad2.slice(6) === 'Facebook'"class="fab fa-facebook fa-3x"></i>
+          <i *ngIf="tiempoPorEdad2.slice(6) === 'Twitter'"class="fab fa-twitter fa-3x"></i>
+          <i *ngIf="tiempoPorEdad2.slice(6) === 'Whatsapp'"class="fab fa-whatsapp fa-3x"></i>
+          <i *ngIf="tiempoPorEdad2.slice(6) === 'Instagram'"class="fab fa-instagram fa-3x"></i>
+          <i *ngIf="tiempoPorEdad2.slice(6) === 'Tiktok'"class="fab fa-tiktok fa-3x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mb-5"></div>
+<div class="row">
+  <div class="col-md-4 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+          <div>
+            <p class="mb-2 text-md-center text-lg-left">Red Social Mas Usada Por Rango (34-40)</p>
+            <h1 class="mb-0">{{tiempoPorEdad3.slice(6)}}</h1>
+          </div>
+          <i *ngIf="tiempoPorEdad3.slice(6) === 'Facebook'"class="fab fa-facebook fa-3x"></i>
+          <i *ngIf="tiempoPorEdad3.slice(6) === 'Twitter'"class="fab fa-twitter fa-3x"></i>
+          <i *ngIf="tiempoPorEdad3.slice(6) === 'Whatsapp'"class="fab fa-whatsapp fa-3x"></i>
+          <i *ngIf="tiempoPorEdad3.slice(6) === 'Instagram'"class="fab fa-instagram fa-3x"></i>
+          <i *ngIf="tiempoPorEdad3.slice(6) === 'Tiktok'"class="fab fa-tiktok fa-3x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+          <div>
+            <p class="mb-2 text-md-center text-lg-left">Red Social Mas Usada Por Rango (40+)</p>
+            <h1 class="mb-0">{{tiempoPorEdad4.slice(6)}}</h1>
+          </div>
+          <i *ngIf="tiempoPorEdad4.slice(6) === 'Facebook'"class="fab fa-facebook fa-3x"></i>
+          <i *ngIf="tiempoPorEdad4.slice(6) === 'Twitter'"class="fab fa-twitter fa-3x"></i>
+          <i *ngIf="tiempoPorEdad4.slice(6) === 'Whatsapp'"class="fab fa-whatsapp fa-3x"></i>
+          <i *ngIf="tiempoPorEdad4.slice(6) === 'Instagram'"class="fab fa-instagram fa-3x"></i>
+          <i *ngIf="tiempoPorEdad4.slice(6) === 'Tiktok'"class="fab fa-tiktok fa-3x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+          <div [ngSwitch]="redSocialFavorita">
+            <p class="mb-2 text-md-center text-lg-left">Red Social Favorita </p>
+            <h1 class="mb-0">{{redSocialFavorita}}</h1>
+          </div>
+          <i class="fas fa-star fa-3x"></i>
+        </div>
+        <i *ngIf="redSocialFavorita === 'Facebook'"class="fab fa-facebook fa-3x"></i>
+        <i *ngIf="redSocialFavorita === 'Twitter'"class="fab fa-twitter fa-3x"></i>
+        <i *ngIf="redSocialFavorita === 'Whatsapp'"class="fab fa-whatsapp fa-3x"></i>
+        <i *ngIf="redSocialFavorita === 'Instagram'"class="fab fa-instagram fa-3x"></i>
+        <i *ngIf="redSocialFavorita === 'Tiktok'"class="fab fa-tiktok fa-3x"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mb-5"></div>
+<div class="row">
+  <div class="col-md-4 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+          <div>
+            <p class="mb-2 text-md-center text-lg-left">Red Social Menos Favorita</p>
+            <h1 class="mb-0">{{redSocialMenosFavorita}}</h1>
+          </div>
+          <i class="fas fa-thumbs-down fa-3x"></i>
+        </div>
+        <i *ngIf="redSocialMenosFavorita === 'Facebook'"class="fab fa-facebook fa-3x"></i>
+        <i *ngIf="redSocialMenosFavorita === 'Twitter'"class="fab fa-twitter fa-3x"></i>
+        <i *ngIf="redSocialMenosFavorita === 'Whatsapp'"class="fab fa-whatsapp fa-3x"></i>
+        <i *ngIf="redSocialMenosFavorita === 'Instagram'"class="fab fa-instagram fa-3x"></i>
+        <i *ngIf="redSocialMenosFavorita === 'Tiktok'"class="fab fa-tiktok fa-3x"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mt-5"></div>
+<div class="row">
+  <div class="col-xl-6 grid-margin stretch-card flex-column">
+    <h5 class="mb-2 mb-4" style="color: aliceblue;">Estadisticas De Red Social</h5>
+    <div class="row h-100">
+      <div class="col-md-12 stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start flex-wrap">
+              <div>
+                <p class="mb-3">Tiempo Promedio De Uso Por Red Social </p>
+              </div>
+              <i class="fas fa-chart-pie fa-3x"></i>
+            </div>
+            <div id="chart">
+              <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [labels]="chartOptions.labels"
+                [responsive]="chartOptions.responsive"
+              ></apx-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mb-5">
+</div>

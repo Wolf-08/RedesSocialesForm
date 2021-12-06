@@ -6,6 +6,7 @@ import {HttpClientModule} from '@angular/common/http'
 //Formulario Angular
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { NgApexchartsModule } from "ng-apexcharts";
 import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { StatsComponent } from './components/stats/stats.component';
@@ -25,6 +26,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

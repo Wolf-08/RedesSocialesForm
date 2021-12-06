@@ -13,3 +13,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Run the Backend
 
 For use this app correctly you need to star the api https://github.com/Wolf-08/ApiRedesSociales an then run the app  with `ng serve`
+
+## Test
+![alt text](assets/encuest1.png)

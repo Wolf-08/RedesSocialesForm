@@ -41,6 +41,7 @@
                 step="0.5"
                 value="2"
                 required
+                oninput= "this.nextElementSibling.value = this.value"
                 [class.is-invalid]="campoValido('TiempoFacebook')"
                 formControlName="TiempoFacebook">
               <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
@@ -57,6 +58,7 @@
                 step="0.5"
                 value="2"
                 required
+                oninput= "this.nextElementSibling.value = this.value"
                 formControlName="TiempoTikTok"
                 [class.is-invalid]="campoValido('TiempoTikTok')">
               <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
@@ -73,6 +75,7 @@
                 step="0.5"
                 value="2"
                 required
+                oninput= "this.nextElementSibling.value = this.value"
                 formControlName="TiempoInstagram"
                 [class.is-invalid]="campoValido('TiempoInstagram')">
               <input class="col-md-2"  readonly> <label class="col-4"> Hrs</label>
@@ -88,6 +91,7 @@
                 max="24"
                 step="0.5"
                 value="2"
+                oninput= "this.nextElementSibling.value = this.value"
                 required
                 formControlName="TiempoTwitter"
                 [class.is-invalid]="campoValido('TiempoTwitter')">
@@ -104,6 +108,7 @@
                 max="24"
                 step="0.5"
                 value="2"
+                oninput= "this.nextElementSibling.value = this.value"
                 required
                 formControlName="TiempoWhatsapp"
                 [class.is-invalid]="campoValido('TiempoWhatsapp')">
@@ -120,6 +125,7 @@
                 id="male"
                 autocomplete="off"
                 required
+                oninput= "this.nextElementSibling.value = this.value"
                 value="M"
                 [class.is-invalid]="campoValido('sexo')"/>
               <small *ngIf=" campoValido('sexo')" style="color: aliceblue;"> Seleccione una opcion</small>
